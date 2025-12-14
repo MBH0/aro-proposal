@@ -1,12 +1,12 @@
-version: '3.8'
-
 services:
   aro-proposal:
     build: .
-    container_name: aro-proposal
     restart: unless-stopped
+    expose:
+      - "80"
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost/"]
-      interval: 30s
-      timeout: 10s
+      test: ["CMD-SHELL", "curl -f http://localhost/ || exit 1"]
+      interval: 10s
+      timeout: 5s
       retries: 3
+      start_period: 5s
