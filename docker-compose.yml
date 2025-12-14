@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  aro-proposal:
+    build: .
+    container_name: aro-proposal
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
