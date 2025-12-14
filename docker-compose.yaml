@@ -5,8 +5,6 @@ services:
     build: .
     container_name: aro-proposal
     restart: unless-stopped
-    ports:
-      - "80:80"
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://localhost/"]
       interval: 30s
