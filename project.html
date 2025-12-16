@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Booking System | Aro Multiservices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor follower -->
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Progress bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+                    <span class="logo-text">ARO</span>
+                    <span class="logo-divider"></span>
+                    <span class="logo-subtitle">MVP Project</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#discovery">Discovery</a></li>
+                <li><a href="#kanban">Kanban</a></li>
+                <li><a href="#tech">Tech Stack</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="index.html" class="nav-cta">Ver Propuesta</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero-content">
+                <span class="project-badge">MVP Development</span>
+                <h1>Booking System <span class="gradient-text">Aro Multiservices</span></h1>
+                <p>Sistema de reservas robusto para servicios de limpieza - desde clientes residenciales hasta grandes corporaciones</p>
+                <div class="project-stats">
+                    <div class="stat">
+                        <span class="stat-value">29</span>
+                        <span class="stat-label">Tareas totales</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">4</span>
+                        <span class="stat-label">En progreso</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Completadas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discovery Section -->
+    <section class="section section-discovery" id="discovery">
+        <div class="container">
+            <div class="section-intro centered">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Discovery & Alineamiento</h2>
+                <p class="section-subtitle">
+                    Preguntas clave para asegurar que el desarrollo se alinee perfectamente con su visión
+                </p>
+            </div>
+
+            <div class="discovery-intro">
+                <div class="discovery-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </div>
+                <p>Las siguientes preguntas nos ayudarán a entender exactamente qué necesitan. No hay respuestas incorrectas - cada decisión moldea el producto final.</p>
+            </div>
+
+            <!-- Category 1: Target Users -->
+            <div class="discovery-category" data-category="users">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="category-title">
+                        <h3>Usuarios & Segmentos</h3>
+                        <p>Entender quiénes usarán el sistema</p>
+                    </div>
+                    <span class="category-count">5 preguntas</span>
+                </div>
+                <div class="questions-grid">
+                    <div class="question-card" data-question="1">
+                        <div class="question-number">01</div>
+                        <h4>Tipos de clientes</h4>
+                        <p class="question-text">¿Cuál es la proporción aproximada entre clientes residenciales vs empresas/corporaciones?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="residential-heavy">
+                                <span class="option-text">Mayoría residencial (70%+)</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="balanced">
+                                <span class="option-text">Balanceado (50/50)</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="business-heavy">
+                                <span class="option-text">Mayoría empresas (70%+)</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="unknown">
+                                <span class="option-text">No estoy seguro aún</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Define la complejidad de facturación, contratos, y el flujo de reservas.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="2">
+                        <div class="question-number">02</div>
+                        <h4>Flujo de registro</h4>
+                        <p class="question-text">¿Cómo prefieren que los nuevos clientes se registren?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="email">
+                                <span class="option-text">Email + contraseña tradicional</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="phone">
+                                <span class="option-text">Número de teléfono + SMS</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="google">
+                                <span class="option-text">Login con Google</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="guest">
+                                <span class="option-text">Reserva como invitado (sin cuenta)</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Afecta la fricción de conversión y la capacidad de remarketing.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="3">
+                        <div class="question-number">03</div>
+                        <h4>Roles internos</h4>
+                        <p class="question-text">¿Qué roles necesitan dentro del sistema administrativo?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q3" value="admin">
+                                <span class="option-text">Super Admin (acceso total)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q3" value="manager">
+                                <span class="option-text">Manager (gestión sin config)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q3" value="staff">
+                                <span class="option-text">Staff (ver/gestionar reservas)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q3" value="cleaner">
+                                <span class="option-text">Limpiador (ver sus asignaciones)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q3" value="accountant">
+                                <span class="option-text">Contabilidad (solo finanzas)</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Define la estructura de permisos y la complejidad del panel admin.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="4">
+                        <div class="question-number">04</div>
+                        <h4>Multi-ubicación</h4>
+                        <p class="question-text">¿Operan en múltiples ciudades o regiones?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="single">
+                                <span class="option-text">Una sola ubicación/ciudad</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="multi-city">
+                                <span class="option-text">Múltiples ciudades en UK</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="expansion">
+                                <span class="option-text">Una ahora, expansión planeada</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Afecta la gestión de zonas, precios por área, y asignación de personal.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="5">
+                        <div class="question-number">05</div>
+                        <h4>Idiomas</h4>
+                        <p class="question-text">¿El sistema necesita soportar múltiples idiomas?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="english-only">
+                                <span class="option-text">Solo inglés</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="multi">
+                                <span class="option-text">Inglés + otros idiomas</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="future">
+                                <span class="option-text">Solo inglés ahora, multi-idioma después</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Requiere arquitectura de internacionalización desde el inicio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Services & Booking -->
+            <div class="discovery-category" data-category="services">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="category-title">
+                        <h3>Servicios & Reservas</h3>
+                        <p>Cómo funcionará el sistema de booking</p>
+                    </div>
+                    <span class="category-count">6 preguntas</span>
+                </div>
+                <div class="questions-grid">
+                    <div class="question-card" data-question="6">
+                        <div class="question-number">06</div>
+                        <h4>Tipos de servicios</h4>
+                        <p class="question-text">¿Qué tipos de servicios de limpieza ofrecen?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q6" value="regular">
+                                <span class="option-text">Limpieza regular/mantenimiento</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q6" value="deep">
+                                <span class="option-text">Limpieza profunda</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q6" value="end-tenancy">
+                                <span class="option-text">End of tenancy</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q6" value="office">
+                                <span class="option-text">Limpieza de oficinas</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q6" value="carpet">
+                                <span class="option-text">Limpieza de alfombras</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q6" value="windows">
+                                <span class="option-text">Limpieza de ventanas</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q6" value="other">
+                                <span class="option-text">Otros servicios especializados</span>
+                            </label>
+                        </div>
+                        <textarea class="question-textarea" placeholder="Si seleccionó 'Otros', especifique cuáles..."></textarea>
+                    </div>
+
+                    <div class="question-card" data-question="7">
+                        <div class="question-number">07</div>
+                        <h4>Modelo de precios</h4>
+                        <p class="question-text">¿Cómo se calculan los precios de los servicios?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q7" value="hourly">
+                                <span class="option-text">Por hora</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q7" value="sqm">
+                                <span class="option-text">Por metros cuadrados</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q7" value="rooms">
+                                <span class="option-text">Por número de habitaciones</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q7" value="fixed">
+                                <span class="option-text">Precio fijo por servicio</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q7" value="quote">
+                                <span class="option-text">Cotización personalizada</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Define la complejidad del calculador de precios y el flujo de reserva.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="8">
+                        <div class="question-number">08</div>
+                        <h4>Frecuencia de servicios</h4>
+                        <p class="question-text">¿Ofrecen servicios recurrentes con descuento?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="one-time">
+                                <span class="option-text">Solo servicios únicos</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="recurring">
+                                <span class="option-text">Sí, semanal/quincenal/mensual</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="both">
+                                <span class="option-text">Ambos (único y recurrente)</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Requiere sistema de suscripciones y gestión de calendario avanzada.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="9">
+                        <div class="question-number">09</div>
+                        <h4>Disponibilidad</h4>
+                        <p class="question-text">¿Cómo se gestiona la disponibilidad actualmente?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q9" value="slots">
+                                <span class="option-text">Slots de tiempo predefinidos</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="flexible">
+                                <span class="option-text">Horario flexible (cliente elige hora)</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="staff-based">
+                                <span class="option-text">Basado en disponibilidad de staff</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="manual">
+                                <span class="option-text">Confirmación manual siempre</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Define si el booking es instantáneo o requiere aprobación.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="10">
+                        <div class="question-number">10</div>
+                        <h4>Extras y add-ons</h4>
+                        <p class="question-text">¿Ofrecen servicios adicionales que el cliente puede agregar?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q10" value="oven">
+                                <span class="option-text">Limpieza de horno</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q10" value="fridge">
+                                <span class="option-text">Limpieza de nevera</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q10" value="laundry">
+                                <span class="option-text">Lavandería</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q10" value="ironing">
+                                <span class="option-text">Planchado</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q10" value="supplies">
+                                <span class="option-text">Productos de limpieza incluidos</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q10" value="eco">
+                                <span class="option-text">Productos eco-friendly</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="11">
+                        <div class="question-number">11</div>
+                        <h4>Cancelaciones</h4>
+                        <p class="question-text">¿Cuál es su política de cancelación?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q11" value="free-24">
+                                <span class="option-text">Gratis hasta 24h antes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="free-48">
+                                <span class="option-text">Gratis hasta 48h antes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="partial">
+                                <span class="option-text">Cargo parcial por cancelación tardía</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="no-refund">
+                                <span class="option-text">Sin reembolso una vez confirmado</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="flexible">
+                                <span class="option-text">Política flexible (caso por caso)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: Payments -->
+            <div class="discovery-category" data-category="payments">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="category-title">
+                        <h3>Pagos & Facturación</h3>
+                        <p>Cómo se gestionará el dinero</p>
+                    </div>
+                    <span class="category-count">4 preguntas</span>
+                </div>
+                <div class="questions-grid">
+                    <div class="question-card" data-question="12">
+                        <div class="question-number">12</div>
+                        <h4>Métodos de pago</h4>
+                        <p class="question-text">¿Qué métodos de pago necesitan aceptar?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q12" value="card">
+                                <span class="option-text">Tarjeta de crédito/débito online</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q12" value="cash">
+                                <span class="option-text">Efectivo (pago al limpiador)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q12" value="bank">
+                                <span class="option-text">Transferencia bancaria</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q12" value="invoice">
+                                <span class="option-text">Factura a empresas (net 30)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q12" value="paypal">
+                                <span class="option-text">PayPal</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="13">
+                        <div class="question-number">13</div>
+                        <h4>Momento del pago</h4>
+                        <p class="question-text">¿Cuándo debe pagar el cliente?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q13" value="upfront">
+                                <span class="option-text">100% al reservar</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="deposit">
+                                <span class="option-text">Depósito al reservar, resto después</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="after">
+                                <span class="option-text">Después del servicio</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="flexible">
+                                <span class="option-text">Depende del tipo de cliente</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Por qué importa:</strong> Afecta el flujo de caja y la necesidad de pagos diferidos.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="14">
+                        <div class="question-number">14</div>
+                        <h4>Facturación empresarial</h4>
+                        <p class="question-text">Para clientes empresariales, ¿qué necesitan?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q14" value="invoice-auto">
+                                <span class="option-text">Facturas automáticas por servicio</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q14" value="invoice-monthly">
+                                <span class="option-text">Factura mensual consolidada</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q14" value="po">
+                                <span class="option-text">Soporte para órdenes de compra (PO)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q14" value="vat">
+                                <span class="option-text">Facturas con VAT desglosado</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q14" value="xero">
+                                <span class="option-text">Integración con Xero/QuickBooks</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="15">
+                        <div class="question-number">15</div>
+                        <h4>Descuentos y promociones</h4>
+                        <p class="question-text">¿Qué tipos de descuentos quieren ofrecer?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q15" value="recurring">
+                                <span class="option-text">Descuento por servicio recurrente</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q15" value="first-time">
+                                <span class="option-text">Descuento primera reserva</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q15" value="referral">
+                                <span class="option-text">Programa de referidos</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q15" value="codes">
+                                <span class="option-text">Códigos promocionales</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q15" value="seasonal">
+                                <span class="option-text">Promociones de temporada</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 4: Communication -->
+            <div class="discovery-category" data-category="communication">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="category-title">
+                        <h3>Comunicación & Notificaciones</h3>
+                        <p>Cómo mantener informados a todos</p>
+                    </div>
+                    <span class="category-count">3 preguntas</span>
+                </div>
+                <div class="questions-grid">
+                    <div class="question-card" data-question="16">
+                        <div class="question-number">16</div>
+                        <h4>Canales de notificación</h4>
+                        <p class="question-text">¿Por dónde quieren comunicarse con los clientes?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q16" value="email">
+                                <span class="option-text">Email (confirmaciones, recordatorios)</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q16" value="sms">
+                                <span class="option-text">SMS</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q16" value="whatsapp">
+                                <span class="option-text">WhatsApp Business</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q16" value="push">
+                                <span class="option-text">Push notifications (app futura)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="17">
+                        <div class="question-number">17</div>
+                        <h4>Notificaciones automáticas</h4>
+                        <p class="question-text">¿Qué notificaciones deben ser automáticas?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q17" value="confirmation">
+                                <span class="option-text">Confirmación de reserva</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q17" value="reminder-24">
+                                <span class="option-text">Recordatorio 24h antes</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q17" value="on-way">
+                                <span class="option-text">"Limpiador en camino"</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q17" value="completed">
+                                <span class="option-text">Servicio completado</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q17" value="review">
+                                <span class="option-text">Solicitud de reseña</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q17" value="invoice">
+                                <span class="option-text">Factura enviada</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="18">
+                        <div class="question-number">18</div>
+                        <h4>Comunicación con staff</h4>
+                        <p class="question-text">¿Cómo se comunican actualmente con los limpiadores?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q18" value="whatsapp">
+                                <span class="option-text">WhatsApp grupo/individual</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="calls">
+                                <span class="option-text">Llamadas telefónicas</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="app">
+                                <span class="option-text">Queremos un sistema interno</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="mixed">
+                                <span class="option-text">Mezcla de varios métodos</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 5: Design & UX -->
+            <div class="discovery-category" data-category="design">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <div class="category-title">
+                        <h3>Diseño & Experiencia</h3>
+                        <p>Look & feel del sistema</p>
+                    </div>
+                    <span class="category-count">3 preguntas</span>
+                </div>
+                <div class="questions-grid">
+                    <div class="question-card" data-question="19">
+                        <div class="question-number">19</div>
+                        <h4>Estilo visual</h4>
+                        <p class="question-text">¿Qué estilo visual prefieren para la plataforma?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q19" value="minimal">
+                                <span class="option-text">Minimalista y limpio</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="modern">
+                                <span class="option-text">Moderno con animaciones</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="corporate">
+                                <span class="option-text">Profesional/corporativo</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="friendly">
+                                <span class="option-text">Amigable y colorido</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="20">
+                        <div class="question-number">20</div>
+                        <h4>Referencias de diseño</h4>
+                        <p class="question-text">¿Hay algún sitio web o app cuyo diseño les guste?</p>
+                        <textarea class="question-textarea" placeholder="Escriba URLs o nombres de sitios que les gusten visualmente..." name="q20"></textarea>
+                        <div class="question-note">
+                            <strong>Tip:</strong> No tiene que ser del mismo rubro. Puede ser cualquier sitio con un diseño que les atraiga.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="21">
+                        <div class="question-number">21</div>
+                        <h4>Branding</h4>
+                        <p class="question-text">¿Tienen elementos de marca definidos?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q21" value="logo">
+                                <span class="option-text">Logo definitivo</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q21" value="colors">
+                                <span class="option-text">Colores corporativos</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q21" value="fonts">
+                                <span class="option-text">Tipografía definida</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q21" value="guidelines">
+                                <span class="option-text">Manual de marca completo</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q21" value="none">
+                                <span class="option-text">Necesitamos crear todo</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 6: Quality & Priorities -->
+            <div class="discovery-category" data-category="quality">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="category-title">
+                        <h3>Calidad & Prioridades</h3>
+                        <p>Qué es más importante para ustedes</p>
+                    </div>
+                    <span class="category-count">3 preguntas</span>
+                </div>
+                <div class="questions-grid">
+                    <div class="question-card" data-question="22">
+                        <div class="question-number">22</div>
+                        <h4>Prioridad #1</h4>
+                        <p class="question-text">Si tuvieran que elegir UNA prioridad principal, ¿cuál sería?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q22" value="speed">
+                                <span class="option-text">Velocidad de desarrollo (lanzar rápido)</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="features">
+                                <span class="option-text">Funcionalidades completas</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="design">
+                                <span class="option-text">Diseño y experiencia de usuario</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="scalability">
+                                <span class="option-text">Escalabilidad para el futuro</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="23">
+                        <div class="question-number">23</div>
+                        <h4>MVP vs Completo</h4>
+                        <p class="question-text">¿Prefieren lanzar rápido con lo básico o esperar a tener todo?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="q23" value="mvp">
+                                <span class="option-text">MVP primero, iterar después</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="complete">
+                                <span class="option-text">Preferimos lanzar más completo</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="balanced">
+                                <span class="option-text">Balance: MVP robusto</span>
+                            </label>
+                        </div>
+                        <div class="question-note">
+                            <strong>Nota:</strong> Un MVP nos permite validar con usuarios reales antes de invertir en features que quizás no se usen.
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-question="24">
+                        <div class="question-number">24</div>
+                        <h4>Preocupaciones principales</h4>
+                        <p class="question-text">¿Qué les preocupa más del proyecto?</p>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="checkbox" name="q24" value="timeline">
+                                <span class="option-text">Que se retrase el lanzamiento</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q24" value="cost">
+                                <span class="option-text">Que se exceda el presupuesto</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q24" value="adoption">
+                                <span class="option-text">Que los clientes no lo adopten</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q24" value="tech">
+                                <span class="option-text">Problemas técnicos/bugs</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q24" value="competition">
+                                <span class="option-text">Que la competencia lance algo similar</span>
+                            </label>
+                        </div>
+                        <textarea class="question-textarea" placeholder="¿Alguna otra preocupación específica?"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="discovery-submit">
+                <div class="submit-info">
+                    <h3>Enviar Respuestas</h3>
+                    <p>Sus respuestas nos ayudarán a crear un plan de desarrollo perfectamente alineado con sus necesidades.</p>
+                </div>
+                <div class="submit-actions">
+                    <button class="btn btn-secondary" id="saveDraft">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Guardar borrador
+                    </button>
+                    <button class="btn btn-primary btn-glow" id="submitAnswers">
+                        Enviar respuestas
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <p class="submit-note">Las respuestas se guardan automáticamente en su navegador</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kanban Section -->
+    <section class="section section-kanban" id="kanban">
+        <div class="container">
+            <div class="section-intro centered">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Kanban de Desarrollo</h2>
+                <p class="section-subtitle">
+                    Estado actual del proyecto - Stack 100% TypeScript
+                </p>
+            </div>
+
+            <!-- Kanban Filter Tabs -->
+            <div class="kanban-filters">
+                <button class="kanban-filter active" data-filter="all">Todas</button>
+                <button class="kanban-filter" data-filter="setup">Setup</button>
+                <button class="kanban-filter" data-filter="backend">Backend</button>
+                <button class="kanban-filter" data-filter="frontend">Frontend</button>
+                <button class="kanban-filter" data-filter="analytics">Analytics</button>
+            </div>
+
+            <!-- Kanban Board -->
+            <div class="kanban-board kanban-single-column">
+                <!-- Column: To Do -->
+                <div class="kanban-column" data-status="todo">
+                    <div class="kanban-column-header">
+                        <span class="column-dot todo"></span>
+                        <h3>To Do</h3>
+                        <span class="column-count">23</span>
+                    </div>
+                    <div class="kanban-cards">
+                        <!-- Setup & Infrastructure -->
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-critical">Crítico</span>
+                            </div>
+                            <h4>Next.js 14 Setup</h4>
+                            <p>App Router, Server Components</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-critical">Crítico</span>
+                            </div>
+                            <h4>NestJS Setup</h4>
+                            <p>Prisma, Swagger, validation</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-db">Database</span>
+                            </div>
+                            <h4>PostgreSQL + Prisma</h4>
+                            <p>Schema, migrations, seeds</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-critical">Crítico</span>
+                            </div>
+                            <h4>Docker Compose</h4>
+                            <p>App, DB, Redis, Nginx + healthchecks</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-infra">Infra</span>
+                            </div>
+                            <h4>Coolify Deployment</h4>
+                            <p>Staging + production environments</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-devops">DevOps</span>
+                            </div>
+                            <h4>Environment Config</h4>
+                            <p>Secrets, env vars, configs</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-infra">Infra</span>
+                            </div>
+                            <h4>Monorepo Structure</h4>
+                            <p>Turborepo/Nx para packages compartidos</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="setup">
+                            <div class="card-tags">
+                                <span class="tag tag-setup">Setup</span>
+                                <span class="tag tag-devops">DevOps</span>
+                            </div>
+                            <h4>CI/CD Pipeline</h4>
+                            <p>GitHub Actions + deploy a Coolify</p>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="kanban-card" data-category="backend">
+                            <div class="card-tags">
+                                <span class="tag tag-backend">Backend</span>
+                                <span class="tag tag-security">Security</span>
+                            </div>
+                            <h4>Auth System</h4>
+                            <p>JWT, OAuth2, verification</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="backend">
+                            <div class="card-tags">
+                                <span class="tag tag-backend">Backend</span>
+                                <span class="tag tag-core">Core</span>
+                            </div>
+                            <h4>Booking Engine</h4>
+                            <p>Disponibilidad, conflictos, reglas</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="backend">
+                            <div class="card-tags">
+                                <span class="tag tag-backend">Backend</span>
+                                <span class="tag tag-security">Security</span>
+                            </div>
+                            <h4>Sistema de Roles RBAC</h4>
+                            <p>Admin, Manager, Staff, Cleaner, Customer</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="backend">
+                            <div class="card-tags">
+                                <span class="tag tag-backend">Backend</span>
+                                <span class="tag tag-perf">Performance</span>
+                            </div>
+                            <h4>Redis Caching</h4>
+                            <p>Sessions, availability, catalog</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="backend">
+                            <div class="card-tags">
+                                <span class="tag tag-backend">Backend</span>
+                                <span class="tag tag-ai">AI-Ready</span>
+                            </div>
+                            <h4>API Modular + Webhooks</h4>
+                            <p>Arquitectura preparada para IA</p>
+                        </div>
+
+                        <!-- Frontend -->
+                        <div class="kanban-card" data-category="frontend">
+                            <div class="card-tags">
+                                <span class="tag tag-frontend">Frontend</span>
+                                <span class="tag tag-core">Core</span>
+                            </div>
+                            <h4>Landing Page</h4>
+                            <p>Servicios, hero, SEO básico</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="frontend">
+                            <div class="card-tags">
+                                <span class="tag tag-frontend">Frontend</span>
+                                <span class="tag tag-core">Core</span>
+                            </div>
+                            <h4>User Dashboard</h4>
+                            <p>Reservas, historial, perfil</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="frontend">
+                            <div class="card-tags">
+                                <span class="tag tag-frontend">Frontend</span>
+                                <span class="tag tag-admin">Admin</span>
+                            </div>
+                            <h4>Admin Panel</h4>
+                            <p>Métricas, bookings, usuarios</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="frontend">
+                            <div class="card-tags">
+                                <span class="tag tag-frontend">Frontend</span>
+                                <span class="tag tag-ux">UX</span>
+                            </div>
+                            <h4>Sistema de Filtros</h4>
+                            <p>Filtros avanzados con URL state</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="frontend">
+                            <div class="card-tags">
+                                <span class="tag tag-frontend">Frontend</span>
+                                <span class="tag tag-perf">Performance</span>
+                            </div>
+                            <h4>Image Optimization</h4>
+                            <p>Next/Image + Cloudflare R2</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="frontend">
+                            <div class="card-tags">
+                                <span class="tag tag-frontend">Frontend</span>
+                                <span class="tag tag-seo">SEO</span>
+                            </div>
+                            <h4>SEO Avanzado</h4>
+                            <p>Metadata dinámico, JSON-LD, sitemap</p>
+                        </div>
+
+                        <!-- Analytics -->
+                        <div class="kanban-card" data-category="analytics">
+                            <div class="card-tags">
+                                <span class="tag tag-analytics">Analytics</span>
+                                <span class="tag tag-core">Core</span>
+                            </div>
+                            <h4>PostHog Setup</h4>
+                            <p>Events, feature flags, recordings</p>
+                        </div>
+
+                        <div class="kanban-card" data-category="analytics">
+                            <div class="card-tags">
+                                <span class="tag tag-analytics">Analytics</span>
+                                <span class="tag tag-marketing">Marketing</span>
+                            </div>
+                            <h4>Marketing Pixels</h4>
+                            <p>GA4, Meta Pixel, GTM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column: In Progress (empty) -->
+                <div class="kanban-column" data-status="progress">
+                    <div class="kanban-column-header">
+                        <span class="column-dot progress"></span>
+                        <h3>In Progress</h3>
+                        <span class="column-count">0</span>
+                    </div>
+                    <div class="kanban-cards">
+                        <div class="kanban-empty">
+                            <p>Las tareas en progreso aparecerán aquí</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column: Done (empty) -->
+                <div class="kanban-column" data-status="done">
+                    <div class="kanban-column-header">
+                        <span class="column-dot done"></span>
+                        <h3>Done</h3>
+                        <span class="column-count">0</span>
+                    </div>
+                    <div class="kanban-cards">
+                        <div class="kanban-empty">
+                            <p>Las tareas completadas aparecerán aquí</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section" id="tech">
+        <div class="container">
+            <div class="section-intro centered">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-subtitle">
+                    Tecnologias seleccionadas para el proyecto
+                </p>
+            </div>
+
+            <div class="tech-stack-banner">
+                <div class="tech-item" data-tech="nextjs">
+                    <span class="tech-icon">▲</span>
+                    <span class="tech-name">Next.js 14</span>
+                    <span class="tech-desc">Frontend + SSR</span>
+                </div>
+                <div class="tech-item" data-tech="nestjs">
+                    <span class="tech-icon">🔺</span>
+                    <span class="tech-name">NestJS</span>
+                    <span class="tech-desc">Backend API</span>
+                </div>
+                <div class="tech-item" data-tech="postgres">
+                    <span class="tech-icon">🐘</span>
+                    <span class="tech-name">PostgreSQL</span>
+                    <span class="tech-desc">Base de datos</span>
+                </div>
+                <div class="tech-item" data-tech="redis">
+                    <span class="tech-icon">◆</span>
+                    <span class="tech-name">Redis</span>
+                    <span class="tech-desc">Cache & Sessions</span>
+                </div>
+                <div class="tech-item" data-tech="docker">
+                    <span class="tech-icon">🐳</span>
+                    <span class="tech-name">Docker</span>
+                    <span class="tech-desc">Contenedores</span>
+                </div>
+                <div class="tech-item" data-tech="posthog">
+                    <span class="tech-icon">🦔</span>
+                    <span class="tech-name">PostHog</span>
+                    <span class="tech-desc">Analytics</span>
+                </div>
+            </div>
+
+            <!-- API AI Section -->
+            <div class="api-ai-section">
+                <div class="api-ai-header">
+                    <h3>API Preparada para IA</h3>
+                    <p>Arquitectura lista para integraciones de inteligencia artificial</p>
+                </div>
+                <div class="api-features">
+                    <div class="api-feature">
+                        <div class="feature-code">
+                            <pre><code>// Webhook Events
+POST /api/webhooks/booking-created
+POST /api/webhooks/user-registered
+POST /api/webhooks/review-submitted</code></pre>
+                        </div>
+                        <div class="feature-desc">
+                            <h4>Event-Driven Architecture</h4>
+                            <p>Cada accion emite eventos para agentes AI y automatizaciones</p>
+                        </div>
+                    </div>
+                    <div class="api-feature">
+                        <div class="feature-code">
+                            <pre><code>// AI-Ready Endpoints
+GET  /api/v1/analytics/user-behavior
+GET  /api/v1/analytics/booking-patterns
+POST /api/v1/ai/classify-inquiry
+POST /api/v1/ai/suggest-services</code></pre>
+                        </div>
+                        <div class="feature-desc">
+                            <h4>AI Integration Points</h4>
+                            <p>Endpoints para analizar patrones y automatizar respuestas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="section section-dark" id="analytics">
+        <div class="container">
+            <div class="section-intro centered">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Analytics & Tracking</h2>
+                <p class="section-subtitle">
+                    Herramientas para entender y optimizar el negocio
+                </p>
+            </div>
+
+            <!-- PostHog Section -->
+            <div class="posthog-section">
+                <div class="posthog-header">
+                    <div class="posthog-logo">🦔</div>
+                    <div class="posthog-title">
+                        <h3>PostHog - Product Intelligence</h3>
+                        <p>Analytics avanzado para productos digitales</p>
+                    </div>
+                </div>
+                <div class="posthog-benefits">
+                    <div class="posthog-benefit">
+                        <div class="benefit-icon">📊</div>
+                        <h4>Product Analytics</h4>
+                        <p>Funnels de conversion, retencion, paths de navegacion</p>
+                    </div>
+                    <div class="posthog-benefit">
+                        <div class="benefit-icon">🎬</div>
+                        <h4>Session Recordings</h4>
+                        <p>Vean sesiones reales para identificar fricciones</p>
+                    </div>
+                    <div class="posthog-benefit">
+                        <div class="benefit-icon">🚩</div>
+                        <h4>Feature Flags</h4>
+                        <p>Lancen features gradualmente, A/B testing nativo</p>
+                    </div>
+                    <div class="posthog-benefit">
+                        <div class="benefit-icon">🔥</div>
+                        <h4>Heatmaps</h4>
+                        <p>Visualicen donde hacen clic los usuarios</p>
+                    </div>
+                    <div class="posthog-benefit">
+                        <div class="benefit-icon">🎯</div>
+                        <h4>Event Tracking</h4>
+                        <p>Tracken cualquier accion para insights</p>
+                    </div>
+                    <div class="posthog-benefit">
+                        <div class="benefit-icon">🔒</div>
+                        <h4>Self-Hosted Option</h4>
+                        <p>100% control de datos, GDPR compliant</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Stack -->
+            <div class="marketing-stack">
+                <h3>Stack de Marketing</h3>
+                <div class="marketing-tools">
+                    <div class="marketing-tool">
+                        <div class="tool-icon ga">GA4</div>
+                        <div class="tool-info">
+                            <h4>Google Analytics 4</h4>
+                            <p>Metricas web + Google Ads</p>
+                        </div>
+                    </div>
+                    <div class="marketing-tool">
+                        <div class="tool-icon meta">f</div>
+                        <div class="tool-info">
+                            <h4>Meta Pixel</h4>
+                            <p>Facebook/Instagram Ads</p>
+                        </div>
+                    </div>
+                    <div class="marketing-tool">
+                        <div class="tool-icon gtm">GTM</div>
+                        <div class="tool-info">
+                            <h4>Google Tag Manager</h4>
+                            <p>Gestion centralizada de tags</p>
+                        </div>
+                    </div>
+                    <div class="marketing-tool">
+                        <div class="tool-icon consent">🍪</div>
+                        <div class="tool-info">
+                            <h4>Consent Management</h4>
+                            <p>GDPR/UK-GDPR compliant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">ARO</span>
+                    <span class="logo-divider"></span>
+                    <span>MVP Booking System 2025</span>
+                </div>
+                <p class="footer-confidential">
+                    Este documento es confidencial y esta destinado exclusivamente a Aro Multiservices.
+                </p>
+                <div class="footer-links">
+                    <a href="index.html">Ver Propuesta Completa</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="project.js"></script>
+</body>
+</html>

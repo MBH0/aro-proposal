@@ -534,4 +534,176 @@ window.addEventListener('scroll', throttle(() => {
     // Additional scroll-based animations can be added here
 }, 16));
 
+/**
+ * Kanban Board Interactions
+ */
+function initKanban() {
+    const filters = document.querySelectorAll('.kanban-filter');
+    const cards = document.querySelectorAll('.kanban-card');
+
+    if (!filters.length || !cards.length) return;
+
+    // Filter functionality
+    filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            // Update active filter
+            filters.forEach(f => f.classList.remove('active'));
+            filter.classList.add('active');
+
+            const filterValue = filter.dataset.filter;
+
+            // Filter cards with animation
+            cards.forEach(card => {
+                const category = card.dataset.category;
+
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(-10px)';
+
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Update column counts
+            updateColumnCounts(filterValue);
+        });
+    });
+
+    // Card hover effects
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            if (!card.classList.contains('completed')) {
+                card.style.transform = 'translateY(-4px)';
+            }
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
+    // Animate cards on scroll into view
+    const kanbanSection = document.querySelector('.section-kanban');
+    if (kanbanSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateKanbanCards();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(kanbanSection);
+    }
+}
+
+function updateColumnCounts(filter) {
+    const columns = document.querySelectorAll('.kanban-column');
+
+    columns.forEach(column => {
+        const cards = column.querySelectorAll('.kanban-card');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const category = card.dataset.category;
+            if (filter === 'all' || category === filter) {
+                visibleCount++;
+            }
+        });
+
+        const countEl = column.querySelector('.column-count');
+        if (countEl) {
+            countEl.textContent = visibleCount;
+        }
+    });
+}
+
+function animateKanbanCards() {
+    const cards = document.querySelectorAll('.kanban-card');
+
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 50);
+    });
+}
+
+/**
+ * Tech Stack Banner Animation
+ */
+function initTechStackAnimation() {
+    const techItems = document.querySelectorAll('.tech-item');
+
+    techItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    observer.unobserve(item);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(item);
+    });
+}
+
+/**
+ * PostHog Benefits Animation
+ */
+function initPostHogAnimation() {
+    const benefits = document.querySelectorAll('.posthog-benefit');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(30px)';
+
+                setTimeout(() => {
+                    entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    benefits.forEach(benefit => observer.observe(benefit));
+}
+
+// Initialize Kanban on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    initKanban();
+    initTechStackAnimation();
+    initPostHogAnimation();
+});
+
 console.log('ARO Multiservices Proposal - Interactive Landing Loaded');
