@@ -13,5 +13,5 @@ services:
     networks:
       - proxy_npm
 networks:
-  npm_proxy:
+  proxy_npm:
     external: true
