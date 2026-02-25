@@ -10,3 +10,8 @@ services:
       timeout: 5s
       retries: 3
       start_period: 5s
+    networks:
+      - npm_proxy
+networks:
+  npm_proxy:
+    external: true
